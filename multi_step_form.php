@@ -17,6 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,6 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
 </head>
+
 <body class="bg-black text-white">
     <div class="container py-5">
         <div class="text-center mb-4">
@@ -79,7 +81,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <div class="col">
                         <img src="assets/laptop-logo.jfif" alt="Other" class="item-img" data-item="Other">
                         <p>Other</p>
-                        <input type="text" class="form-control d-none mt-2" id="other-item" name="itemType" placeholder="Enter item name">
+                        <input type="text" class="form-control d-none mt-2" id="other-item" name="itemType"
+                            placeholder="Enter item name">
                     </div>
                 </div>
                 <div id="laptop-serial" class="d-none mt-3">
@@ -109,7 +112,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <label for="additional-info" class="form-label">Any Additional Info or Questions</label>
                         <textarea class="form-control" id="additional-info" name="additionalInfo" rows="4"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary w-100" style="background-color: navy; color: white;">Submit</button>
+                    <button type="submit" class="btn btn-primary w-100"
+                        style="background-color: navy; color: white;">Submit</button>
                 </form>
             </div>
         </div>
@@ -124,4 +128,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <script src="script.js"></script>
 </body>
+
 </html>

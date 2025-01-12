@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
             dots[i].classList.toggle("active", i === index);
         });
     }
-
+ 
     nextButtons.forEach((button, index) => {
         button.addEventListener("click", function () {
             // Perform validation (if required) for the current step
