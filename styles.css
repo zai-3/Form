@@ -1,16 +1,46 @@
 /* General Styles */
 body {
     font-family: Arial, sans-serif;
+    /* font-size: 20px; */
     background-color: #000;
+    background-image: url('assets/lap_rep.jpg'); /* Replace 'your-image.jpg' with the path to your image */
+    background-size: cover;                 /* Ensures the image covers the entire screen */
+    background-repeat: no-repeat;           /* Prevents the image from repeating */
+    background-position: center;            /* Centers the image */
     color: #fff;
     margin: 0;
-    padding: 0;
+    /* padding: 0; */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    min-height: 100vh;       /* Full viewport height */
+    margin: 0;               /* Remove default body margins */
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Black overlay with 50% transparency */
+    z-index: -1; /* Ensure the overlay is behind all content */
+}
+
+.logo {
+    width: 400px;   /* Adjust width to your desired size */
+    height: auto;   /* Maintains aspect ratio */
 }
 
 .container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
+    max-width: 1200px;       
+    width: 100%;            
+    /* padding: 20px; */
+    /* display: flex; */
+    /* flex-direction: column;  Stack elements vertically */
+    align-items: center;     /* Center form elements horizontally */
+    text-align: center;
 }
 
 h2, h3 {
@@ -19,9 +49,31 @@ h2, h3 {
 
 /* Form Styles */
 .form-control {
-    background-color: #333;
-    color: #fff;
-    border: 1px solid #555;
+    width: 100%;
+    max-width: 900px;
+    padding: 3px 6px; /* Smaller padding */
+    /* font-size: 20px;  Smaller font size */
+    height: 40px;     /* Reduce height */
+}
+
+.form-select {
+    width: 100%; /* Adjust the width */
+    max-width: 900px; /* Restrict maximum width */
+    padding: 3px 6px; /* Smaller padding */
+    /* font-size: 20px;  Smaller font size */
+    height: 45px;     /* Reduce height */
+}
+
+.form-control, 
+.form-select, 
+.btn {
+    display: block;           /* Make the elements block-level to use margin */
+    margin: 10px auto;        /* Center horizontally with auto margin */
+    text-align: center;       /* Center text inside the buttons (optional) */
+}
+
+label {
+    font-size: 20px; /* Adjust size for labels */
 }
 
 .form-control:focus {
@@ -31,11 +83,20 @@ h2, h3 {
     box-shadow: none;
 }
 
+.form-control, .form-select {
+    font-size: 22px !important; /* Adjust as needed */
+}
+
 .btn {
+    width: 100%;
+    max-width: 400px;
     background-color: #007bff;
     border: none;
     color: #fff;
     transition: background-color 0.3s ease;
+    font-size: 22px !important;
+    height: 45px;  
+    text-align: center;
 }
 
 .btn:hover {
@@ -52,10 +113,24 @@ h2, h3 {
     display: inline-block;
     margin: 0 5px;
     transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.dot a {
+    color: transparent;
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
 }
 
 .dot.active {
     background-color: #007bff;
+}
+
+.dot a:hover {
+    background-color: #0056b3;
+    border-radius: 50%;
 }
 
 /* Form Steps */
@@ -69,11 +144,13 @@ h2, h3 {
 
 /* Item Selection Images */
 .item-img {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent;
+    transition: transform 0.3s ease, box-shadow 0.3s;
 }
+
 
 .item-img:hover {
     transform: scale(1.1);
@@ -81,17 +158,101 @@ h2, h3 {
 }
 
 .item-img.selected {
+    border-color: blue;
     transform: scale(1.2);
     box-shadow: 0 0 15px #007bff;
     border: 2px solid #007bff;
     border-radius: 5px;
 }
 
+.alert {
+    padding: 15px;
+    margin-top: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.alert-success {
+    background-color: #28a745;
+    color: white;
+}
+
+.alert-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
 /* Additional Styles */
-#laptop-serial, #other-item {
+/* #laptop-serial, #other-item {
     display: none;
 }
 
+.d-none {
+    display: none !important;
+} */
+
+#submit-button {
+    background-color: #007bff; /* Blue background */
+    color: #ffffff; /* White text */
+    font-size: 1.5rem; /* Bigger text size */
+    padding: 12px 24px; /* Larger padding for a bigger button */
+    border: none; /* Remove default border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 6px #0056b3; /* 3D shadow effect */
+    cursor: not-allowed; /* Default cursor when disabled */
+    transition: all 0.2s ease-in-out; /* Smooth transition for hover effects */
+}
+
+#submit-button:hover:not(:disabled) {
+    background-color: #0056b3; /* Darker blue on hover */
+    box-shadow: 0 4px #003f7f; /* Adjust shadow for hover effect */
+    transform: translateY(-2px); /* Slightly "lift" the button on hover */
+    cursor: pointer; /* Pointer cursor when enabled */
+}
+
+#submit-button:active:not(:disabled) {
+    box-shadow: 0 2px #003f7f; /* Reduce shadow on click */
+    transform: translateY(2px); /* Slightly "press" the button on click */
+}
+
+#submit-button:disabled {
+    background-color: #cccccc; /* Grey background for disabled state */
+    box-shadow: none; /* Remove shadow for disabled state */
+    cursor: not-allowed; /* Keep cursor as not-allowed */
+}
+
+.item-container {
+    position: relative;
+    text-align: center;
+    margin-bottom: 20px; /* Add space between items */
+}
+
+.item-img {
+    cursor: pointer;
+    max-width: 100px;
+    transition: transform 0.2s ease;
+}
+
+.item-img:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+.serial-container {
+    margin-top: 10px;
+    text-align: left; /* Align the label and input to the left */
+}
+
+.row.text-center .col {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.serial-container {
+    margin-top: 10px;
+    text-align: center;
+}
+/* Ensure the serial container is hidden by default */
 .d-none {
     display: none !important;
 }
