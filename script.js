@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         validateForm(); // Validate form on every step change
     }
+<<<<<<< HEAD
 
     // Enable or disable the submit button based on validation
     function validateForm() {
@@ -110,6 +111,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Next button navigation
     nextButtons.forEach((button) => {
+=======
+ 
+    nextButtons.forEach((button, index) => {
+>>>>>>> 7b2e114a9fb341e4c10126450d30a745b30640c0
         button.addEventListener("click", function () {
             const form = steps[currentStep]?.querySelector("form");
             if (form && !form.checkValidity()) {

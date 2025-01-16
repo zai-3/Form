@@ -47,6 +47,7 @@ if (isset($_GET['success']) && $_GET['success'] == 1) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -54,6 +55,7 @@ if (isset($_GET['success']) && $_GET['success'] == 1) {
     <link href="styles.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
 </head>
+
 <body class="bg-black text-white">
     <div class="container py-5">
         <div class="text-center mb-4">
@@ -68,6 +70,7 @@ if (isset($_GET['success']) && $_GET['success'] == 1) {
     </div>
 <?php endif; ?>
 
+<<<<<<< HEAD
 
         <!-- Single form tag for all steps -->
     <form method="POST" id="multi-step-form" class="needs-validation" action="">
@@ -79,6 +82,69 @@ if (isset($_GET['success']) && $_GET['success'] == 1) {
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
                 <input type="text" class="form-control" id="name" name="name" required>
+=======
+            <!-- Step 2: Type Selection -->
+            <div class="form-step d-none">
+                <h3 class="text-center">Type Selection</h3>
+                <div class="row text-center">
+                    <div class="col">
+                        <img src="assets/laptop-logo.jfif" alt="Laptop" class="item-img" data-item="Laptop">
+                        <p>Laptop</p>
+                    </div>
+                    <div class="col">
+                        <img src="assets/laptop-logo.jfif" alt="PC" class="item-img" data-item="PC">
+                        <p>PC</p>
+                    </div>
+                    <div class="col">
+                        <img src="assets/laptop-logo.jfif" alt="Phone" class="item-img" data-item="Phone">
+                        <p>Phone</p>
+                    </div>
+                    <div class="col">
+                        <img src="assets/laptop-logo.jfif" alt="Earphone" class="item-img" data-item="Earphone">
+                        <p>Earphone</p>
+                    </div>
+                    <div class="col">
+                        <img src="assets/laptop-logo.jfif" alt="Keyboard" class="item-img" data-item="Keyboard">
+                        <p>Keyboard</p>
+                    </div>
+                    <div class="col">
+                        <img src="assets/laptop-logo.jfif" alt="Other" class="item-img" data-item="Other">
+                        <p>Other</p>
+                        <input type="text" class="form-control d-none mt-2" id="other-item" name="itemType"
+                            placeholder="Enter item name">
+                    </div>
+                </div>
+                <div id="laptop-serial" class="d-none mt-3">
+                    <label for="serial" class="form-label">Serial Number</label>
+                    <input type="text" class="form-control" id="serial" name="serial" required>
+                </div>
+                <button type="button" class="btn btn-primary w-100 next-step mt-3">Next</button>
+            </div>
+
+            <!-- Step 3: Issue Type -->
+            <div class="form-step d-none">
+                <h3 class="text-center">Issue Type</h3>
+                <form id="step3-form" class="needs-validation" method="POST" novalidate>
+                    <div class="mb-3">
+                        <label for="issue" class="form-label">Issue</label>
+                        <input type="text" class="form-control" id="issue" name="issue" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="purchase-type" class="form-label">Purchase Type</label>
+                        <select class="form-select" id="purchase-type" name="purchaseType" required>
+                            <option value="">Select an option</option>
+                            <option value="store">From Our Store</option>
+                            <option value="other">Some Other Store</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="additional-info" class="form-label">Any Additional Info or Questions</label>
+                        <textarea class="form-control" id="additional-info" name="additionalInfo" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100"
+                        style="background-color: navy; color: white;">Submit</button>
+                </form>
+>>>>>>> 7b2e114a9fb341e4c10126450d30a745b30640c0
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
@@ -259,4 +325,5 @@ if (isset($_GET['success']) && $_GET['success'] == 1) {
 
 <script src="script.js" defer></script>
 </body>
+
 </html>
